@@ -1,0 +1,82 @@
+[
+  {
+    "id": "BUG-001",
+    "module": "calculator",
+    "function": "calculateDiscount",
+    "scenario": "Discount greater than 100 percent",
+    "expected_behavior": "Should reject or clamp the discount instead of returning a negative price",
+    "priority": "high"
+  },
+  {
+    "id": "BUG-002",
+    "module": "calculator",
+    "function": "calculateDiscount",
+    "scenario": "Negative discount value",
+    "expected_behavior": "Should reject a negative discount instead of increasing the price silently",
+    "priority": "medium"
+  },
+  {
+    "id": "BUG-003",
+    "module": "calculator",
+    "function": "calculateTotal",
+    "scenario": "Negative or zero quantity",
+    "expected_behavior": "Should reject a non-positive quantity instead of returning zero or a negative total",
+    "priority": "high"
+  },
+  {
+    "id": "BUG-004",
+    "module": "calculator",
+    "function": "calculateTax",
+    "scenario": "Amount that produces a fractional cent of tax",
+    "expected_behavior": "Should round to the nearest cent instead of truncating downward",
+    "priority": "medium"
+  },
+  {
+    "id": "BUG-005",
+    "module": "user",
+    "function": "validateEmail",
+    "scenario": "Email missing a valid domain suffix, e.g. 'a@b'",
+    "expected_behavior": "Should be rejected as an invalid email address",
+    "priority": "medium"
+  },
+  {
+    "id": "BUG-006",
+    "module": "user",
+    "function": "isAdult",
+    "scenario": "Age is exactly 18",
+    "expected_behavior": "Should be treated as an adult (age >= 18)",
+    "priority": "high"
+  },
+  {
+    "id": "BUG-007",
+    "module": "user",
+    "function": "createUser",
+    "scenario": "Empty name or malformed email passed to createUser",
+    "expected_behavior": "Should reject the input instead of creating an invalid user record",
+    "priority": "medium"
+  },
+  {
+    "id": "BUG-008",
+    "module": "order",
+    "function": "calculateOrderTotal",
+    "scenario": "Order item with quantity greater than 1",
+    "expected_behavior": "Should multiply price by quantity for each line item",
+    "priority": "high"
+  },
+  {
+    "id": "BUG-009",
+    "module": "order",
+    "function": "validateOrder",
+    "scenario": "Order with an empty items array",
+    "expected_behavior": "Should be rejected as an invalid order",
+    "priority": "medium"
+  },
+  {
+    "id": "BUG-010",
+    "module": "order",
+    "function": "applyDiscount",
+    "scenario": "Discount greater than 100 percent applied to an order total",
+    "expected_behavior": "Should reject or clamp the discount instead of returning a negative total",
+    "priority": "medium"
+  }
+]

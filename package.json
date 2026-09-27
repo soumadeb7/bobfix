@@ -1,0 +1,14 @@
+{
+  "name": "bobfix",
+  "version": "1.0.0",
+  "description": "Agentic bug detection, testing, and repair workflow demo for IBM Bob IDE",
+  "main": "src/calculator.js",
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "license": "MIT"
+}
